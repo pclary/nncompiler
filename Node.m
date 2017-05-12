@@ -108,7 +108,7 @@ classdef Node < handle & matlab.mixin.Heterogeneous & matlab.mixin.Copyable
         end
         
         
-        function plot(obj)
+        function g = plot(obj)
             nodes = obj.enumerate();
             A = zeros(numel(nodes));
             for i = 1:numel(nodes)
@@ -137,7 +137,7 @@ classdef Node < handle & matlab.mixin.Heterogeneous & matlab.mixin.Copyable
 %             names = names + ", " + [nodes.depth];
             
             G = digraph(A, cellstr(names));
-            plot(G)
+            g = plot(G);
         end
     end
     
